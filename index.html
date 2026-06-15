@@ -2,208 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=family.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Google Web Apps</title>
-
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --accent: #2563eb;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 36px 18px;
-    }
-
-    header {
-      margin-bottom: 26px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: 34px;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      font-size: 16px;
-      margin: 0;
-    }
-
-    .section-title {
-      margin: 30px 0 12px;
-      font-size: 18px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 700;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 14px;
-    }
-
-    .app-card {
-      display: block;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      text-decoration: none;
-      color: var(--text);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
-    }
-
-    .app-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      border-color: var(--accent);
-    }
-
-    .app-title {
-      font-size: 19px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .app-desc {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .tag {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #3730a3;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .footer {
-      margin-top: 38px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="container">
     <header>
       <h1>My Google Web Apps</h1>
-      <p class="subtitle">One fixed launcher page for all my Google Apps Script tools.</p>
+      <p class="subtitle">Opening Family page...</p>
     </header>
 
-    <div class="section-title">Personal</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbx9ibOrLUFpFTEXi3ZnaKyOV7EvLqgQ_tDykDH98CE9U9JOyT-EctleJz3o10Pd70V0Xg/exec" target="_blank">
-        <div class="app-title">个人看板 / Personal ToDo</div>
-        <div class="app-desc">Personal task board and daily personal tracking.</div>
-        <span class="tag">Personal</span>
-      </a>
+    <div class="nav">
+      <a class="active" href="family.html">Family</a>
+      <a href="jason.html">Jason Work</a>
+      <a href="gang.html">Gang / Own Needs</a>
     </div>
 
-    <div class="section-title">Family / James</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbw_rpWGfwAFGQBxeG1G7ftlanAL__x6f3Ol-VGFUILojyHkdzeERrID2ZRd2Q2UQdPq0A/exec?page=tracker" target="_blank">
-        <div class="app-title">James Daily Schedule</div>
-        <div class="app-desc">James tracker and daily schedule view.</div>
-        <span class="tag">Family</span>
-      </a>
-
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbw_rpWGfwAFGQBxeG1G7ftlanAL__x6f3Ol-VGFUILojyHkdzeERrID2ZRd2Q2UQdPq0A/exec?page=dashboard" target="_blank">
-        <div class="app-title">Dad Daily Reporting / 远爸</div>
-        <div class="app-desc">Dad dashboard and daily reporting view.</div>
-        <span class="tag">Family</span>
-      </a>
-    </div>
-
-    <div class="section-title">Work / DePaul IT</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbyeidDRtcYxkLOnGzDoSwgCJ6S5k-JvAW2tBl0ih3KdlHTRTDll39zWhE9_QfFSH-9f/exec" target="_blank">
-        <div class="app-title">工作看板 — DePaul IT</div>
-        <div class="app-desc">Work task board for DePaul IT items.</div>
-        <span class="tag">Work</span>
-      </a>
-
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbwirFVKAv_tx0i6QDbH6T1VMw4MCvuBHElVy6cPGP0dDPws7AHDpn35Hh-eUrZR46N9/exec" target="_blank">
-        <div class="app-title">Computer Request Tracker</div>
-        <div class="app-desc">Computer request tracking and follow-up workflow.</div>
-        <span class="tag">cReq</span>
-      </a>
-
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbzr2vQXO0XzM94_trzcsYHSjJB0FT8_JbGGht8OII3-0aVGhvp1nP7S8XTyLMSdeYdUtQ/exec" target="_blank">
-        <div class="app-title">depaul-cReq Computer Tracker</div>
-        <div class="app-desc">Dedicated DePaul computer request tracker.</div>
-        <span class="tag">cReq</span>
-      </a>
-
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbyHiKhFnkIyBo280UhPiw8lrg6_hlIIhMykcHBdTau39z-zer94YEizhrPsh_k2I3h7/exec" target="_blank">
-        <div class="app-title">depaul-cReq Simple Request Tracker</div>
-        <div class="app-desc">Simple RITM, DU computer, and ad-hoc request tracker.</div>
-        <span class="tag">Simple</span>
-      </a>
-    </div>
-
-    <div class="section-title">Food / Blood Sugar</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbzH7OEeK-VMEhkWkceE_owrpntnbFtLbym1tWbTE8bljJC-vTvFVW_3HcWQgDiFiiAj-Q/exec" target="_blank">
-        <div class="app-title">Food Decision Tracker</div>
-        <div class="app-desc">Food attributes, meal behavior, timing notes, and decision records.</div>
-        <span class="tag">Food</span>
-      </a>
-
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbwDtCxCbL0XW3_kR4218ziZ6YCY4JRsCDmmipD298UpPC00HI4yxOzGLXCgcTxQFS5J/exec" target="_blank">
-        <div class="app-title">血糖专业管理系统</div>
-        <div class="app-desc">Blood sugar rules, good cases, incidents, highs, lows, and overnight handling.</div>
-        <span class="tag">Diabetes</span>
-      </a>
-    </div>
-
-    <div class="section-title">Learning</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycby7Vh5rHB9-vv38Vi90qif66_zix0tIqxwFfkzMFB1GTd4lF9i7LcxyhazcTRi_9VLI/exec" target="_blank">
-        <div class="app-title">追根究底学习记录器</div>
-        <div class="app-desc">Learning tracker for deep understanding, aha moments, and unresolved questions.</div>
-        <span class="tag">Learning</span>
-      </a>
-    </div>
-
-    <div class="section-title">Admin</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/home" target="_blank">
-        <div class="app-title">My Projects — Apps Script</div>
-        <div class="app-desc">Open Google Apps Script project home.</div>
-        <span class="tag">Admin</span>
-      </a>
-    </div>
-
-    <div class="footer">
-      Notes: duplicate links were consolidated. “Personal ToDo” and “个人看板” point to the same URL. 
-      “James Daily Schedule” and “james tracker” point to the same tracker URL. 
-      “Dad Daily Reporting” and “远爸” point to the same dashboard URL.
-    </div>
+    <p class="subtitle">
+      If the page does not redirect automatically, open <a href="family.html">family.html</a>.
+    </p>
   </div>
 </body>
 </html>
