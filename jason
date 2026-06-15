@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jason Work Apps</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Jason Work Apps</h1>
+      <p class="subtitle">Work-related DePaul IT tools and request trackers.</p>
+    </header>
+
+    <nav class="nav">
+      <a href="family.html" class="">Family</a>
+      <a href="jason.html" class="active">Jason Work</a>
+      <a href="gang.html" class="">Gang / Own Needs</a>
+    </nav>
+
+    <div class="section-title">Work / DePaul IT</div>
+    <div class="grid">
+      <a class="app-card" href="https://script.google.com/macros/s/AKfycbyeidDRtcYxkLOnGzDoSwgCJ6S5k-JvAW2tBl0ih3KdlHTRTDll39zWhE9_QfFSH-9f/exec" target="_blank">
+        <div class="app-title">工作看板 — DePaul IT</div>
+        <div class="app-desc">Work task board for DePaul IT items.</div>
+        <span class="tag">Work</span>
+      </a>
+      <a class="app-card" href="https://script.google.com/macros/s/AKfycbwirFVKAv_tx0i6QDbH6T1VMw4MCvuBHElVy6cPGP0dDPws7AHDpn35Hh-eUrZR46N9/exec" target="_blank">
+        <div class="app-title">Computer Request Tracker</div>
+        <div class="app-desc">Computer request tracking and follow-up workflow.</div>
+        <span class="tag">cReq</span>
+      </a>
+      <a class="app-card" href="https://script.google.com/macros/s/AKfycbzr2vQXO0XzM94_trzcsYHSjJB0FT8_JbGGht8OII3-0aVGhvp1nP7S8XTyLMSdeYdUtQ/exec" target="_blank">
+        <div class="app-title">depaul-cReq Computer Tracker</div>
+        <div class="app-desc">Dedicated DePaul computer request tracker.</div>
+        <span class="tag">cReq</span>
+      </a>
+      <a class="app-card" href="https://script.google.com/macros/s/AKfycbyHiKhFnkIyBo280UhPiw8lrg6_hlIIhMykcHBdTau39z-zer94YEizhrPsh_k2I3h7/exec" target="_blank">
+        <div class="app-title">depaul-cReq Simple Request Tracker</div>
+        <div class="app-desc">Simple RITM, DU computer, and ad-hoc request tracker.</div>
+        <span class="tag">Simple</span>
+      </a>
+    </div>
+    <div class="section-title">Admin</div>
+    <div class="grid">
+      <a class="app-card" href="https://script.google.com/home" target="_blank">
+        <div class="app-title">My Projects — Apps Script</div>
+        <div class="app-desc">Open Google Apps Script project home.</div>
+        <span class="tag">Admin</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      GitHub Pages launcher for Google Apps Script web apps.
+    </div>
+  </div>
+</body>
+</html>
