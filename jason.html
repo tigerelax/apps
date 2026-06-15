@@ -4,57 +4,394 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jason Work Apps</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e6e8ef;
+      --primary: #3b5bdb;
+      --primary-soft: #eef2ff;
+      --green-soft: #ecfdf3;
+      --green: #067647;
+      --orange-soft: #fff4e6;
+      --orange: #b54708;
+      --purple-soft: #f4f3ff;
+      --purple: #5925dc;
+      --blue-soft: #eff8ff;
+      --blue: #175cd3;
+      --gray-soft: #f2f4f7;
+      --gray: #475467;
+      --shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(59, 91, 219, 0.14), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #f2f4f7 100%);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 48px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 30px;
+      border: 1px solid rgba(230, 232, 239, 0.8);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: #2f45b5;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .hero-count {
+      min-width: 136px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: #fafbff;
+      text-align: center;
+    }
+
+    .hero-count strong {
+      display: block;
+      font-size: 38px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-count span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 34px;
+      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .nav a {
+      flex: 1 1 170px;
+      padding: 12px 16px;
+      border-radius: 13px;
+      color: #344054;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .nav a:hover { transform: translateY(-1px); background: #f2f4f7; }
+
+    .nav a.active {
+      background: var(--text);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(23, 32, 51, 0.14);
+    }
+
+    .section { margin-top: 30px; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title .icon {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 11px;
+      background: var(--primary-soft);
+      font-size: 17px;
+    }
+
+    .section-note { color: var(--muted); font-size: 13px; font-weight: 650; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .app-card {
+      position: relative;
+      display: flex;
+      min-height: 164px;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 8px 22px rgba(16, 24, 40, 0.04);
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .app-card::after {
+      content: "↗";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 50%;
+      background: #f7f8fb;
+      color: #667085;
+      font-weight: 900;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59, 91, 219, 0.34);
+      box-shadow: 0 18px 38px rgba(16, 24, 40, 0.10);
+    }
+
+    .app-card:hover::after { background: var(--primary); color: #fff; }
+
+    .app-title {
+      max-width: calc(100% - 44px);
+      margin: 0 0 9px;
+      font-size: 21px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+    }
+
+    .app-desc { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: #2f45b5;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.work { background: var(--blue-soft); color: var(--blue); }
+    .tag.ops { background: var(--orange-soft); color: var(--orange); }
+    .tag.team { background: var(--green-soft); color: var(--green); }
+    .tag.project { background: var(--purple-soft); color: var(--purple); }
+    .tag.personal { background: var(--green-soft); color: var(--green); }
+    .tag.todo { background: var(--blue-soft); color: var(--blue); }
+    .tag.reference { background: var(--purple-soft); color: var(--purple); }
+    .tag.placeholder { background: var(--gray-soft); color: var(--gray); }
+
+    .open-text {
+      color: #98a2b3;
+      font-size: 12px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer {
+      margin-top: 38px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .page { width: min(100% - 22px, 1120px); padding-top: 18px; }
+      .hero { grid-template-columns: 1fr; padding: 22px; }
+      .hero-count { display: none; }
+      .grid { grid-template-columns: 1fr; }
+      .section-header { align-items: flex-start; flex-direction: column; }
+      .nav a { flex-basis: 100%; }
+    }
+
+  </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>Jason Work Apps</h1>
-      <p class="subtitle">Work-related DePaul IT tools and request trackers.</p>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Work launcher</div>
+        <h1>Jason Work Apps</h1>
+        <p class="subtitle">A cleaner home for work tools: cReq, team coordination, project tracking, operations, order follow-up, and request triage.</p>
+      </div>
+      <div class="hero-count" aria-label="5 apps listed">
+        <strong>5</strong>
+        <span>Apps</span>
+      </div>
     </header>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="App categories">
       <a href="family.html" class="">Family</a>
       <a href="jason.html" class="active">Jason Work</a>
       <a href="gang.html" class="">Gang / Own Needs</a>
     </nav>
 
-    <div class="section-title">Work / DePaul IT</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbyeidDRtcYxkLOnGzDoSwgCJ6S5k-JvAW2tBl0ih3KdlHTRTDll39zWhE9_QfFSH-9f/exec" target="_blank">
-        <div class="app-title">工作看板 — DePaul IT</div>
-        <div class="app-desc">Work task board for DePaul IT items.</div>
-        <span class="tag">Work</span>
-      </a>
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbwirFVKAv_tx0i6QDbH6T1VMw4MCvuBHElVy6cPGP0dDPws7AHDpn35Hh-eUrZR46N9/exec" target="_blank">
-        <div class="app-title">Computer Request Tracker</div>
-        <div class="app-desc">Computer request tracking and follow-up workflow.</div>
-        <span class="tag">cReq</span>
-      </a>
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbzr2vQXO0XzM94_trzcsYHSjJB0FT8_JbGGht8OII3-0aVGhvp1nP7S8XTyLMSdeYdUtQ/exec" target="_blank">
-        <div class="app-title">depaul-cReq Computer Tracker</div>
-        <div class="app-desc">Dedicated DePaul computer request tracker.</div>
-        <span class="tag">cReq</span>
-      </a>
-      <a class="app-card" href="https://script.google.com/macros/s/AKfycbyHiKhFnkIyBo280UhPiw8lrg6_hlIIhMykcHBdTau39z-zer94YEizhrPsh_k2I3h7/exec" target="_blank">
-        <div class="app-title">depaul-cReq Simple Request Tracker</div>
-        <div class="app-desc">Simple RITM, DU computer, and ad-hoc request tracker.</div>
-        <span class="tag">Simple</span>
-      </a>
-    </div>
-    <div class="section-title">Admin</div>
-    <div class="grid">
-      <a class="app-card" href="https://script.google.com/home" target="_blank">
-        <div class="app-title">My Projects — Apps Script</div>
-        <div class="app-desc">Open Google Apps Script project home.</div>
-        <span class="tag">Admin</span>
-      </a>
-    </div>
+    <section class="section" aria-labelledby="work-todo">
+      <div class="section-header">
+        <h2 id="work-todo" class="section-title"><span class="icon">✅</span>Work Todo</h2>
+        <span class="section-note">Today, this week, and operational follow-up</span>
+      </div>
+      <div class="grid">
+        <a class="app-card" href="#">
+          <div>
+            <h3 class="app-title">Jason Work Todo</h3>
+            <p class="app-desc">Work task board with Today, This Week, cReq, Team, Projects, and Operations buckets.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="tag work">Work</span>
+            <span class="open-text">Add link</span>
+          </div>
+        </a>
+        <a class="app-card" href="#">
+          <div>
+            <h3 class="app-title">Special Project Tracker</h3>
+            <p class="app-desc">Separate project board with 今天, 这周, 下一步, and 清单 sections.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="tag project">Project</span>
+            <span class="open-text">Add link</span>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="requests">
+      <div class="section-header">
+        <h2 id="requests" class="section-title"><span class="icon">💻</span>Requests / Computer Work</h2>
+        <span class="section-note">Simple triage and next-step tracking</span>
+      </div>
+      <div class="grid">
+        <a class="app-card" href="#">
+          <div>
+            <h3 class="app-title">Generic Request Tracker</h3>
+            <p class="app-desc">Track RITM, DU computer IDs, ad-hoc requests, affiliation, VIP status, notes, and next-step owner.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="tag ops">cReq</span>
+            <span class="open-text">Add link</span>
+          </div>
+        </a>
+        <a class="app-card" href="#">
+          <div>
+            <h3 class="app-title">Computer Request Flow</h3>
+            <p class="app-desc">Capture order stage, quotes, CDW/Dell/Tammy/depot handoffs, delivery status, and follow-up notes.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="tag ops">Operations</span>
+            <span class="open-text">Add link</span>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="team">
+      <div class="section-header">
+        <h2 id="team" class="section-title"><span class="icon">👥</span>Team / Depot</h2>
+        <span class="section-note">Team coordination and delivery visibility</span>
+      </div>
+      <div class="grid">
+        <a class="app-card" href="#">
+          <div>
+            <h3 class="app-title">Team / Depot Order Tracker</h3>
+            <p class="app-desc">Track ordered items, ETA, shipped/arrived state, depot preparation, and delivery confirmation.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="tag team">Team</span>
+            <span class="open-text">Add link</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
-    <div class="footer">
+    <footer class="footer">
       GitHub Pages launcher for Google Apps Script web apps.
-    </div>
-  </div>
+    </footer>
+  </main>
 </body>
 </html>
+
