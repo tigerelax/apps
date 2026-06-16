@@ -2,28 +2,231 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=family.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Apps</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --border: #e6e8ef;
+      --primary: #3b5bdb;
+      --primary-soft: #eef2ff;
+      --shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(59, 91, 219, 0.14), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #f2f4f7 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 48px;
+    }
+
+    .hero {
+      padding: 30px;
+      border: 1px solid rgba(230, 232, 239, 0.8);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: #2f45b5;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .app-card {
+      position: relative;
+      display: flex;
+      min-height: 168px;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: 0 8px 22px rgba(16, 24, 40, 0.04);
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .app-card::after {
+      content: "↗";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      display: grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 50%;
+      background: #f7f8fb;
+      color: #667085;
+      font-weight: 900;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59, 91, 219, 0.34);
+      box-shadow: 0 18px 38px rgba(16, 24, 40, 0.10);
+    }
+
+    .app-card:hover::after {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .app-title {
+      max-width: calc(100% - 44px);
+      margin: 0 0 9px;
+      font-size: 26px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+    }
+
+    .app-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .open-text {
+      margin-top: 28px;
+      color: #98a2b3;
+      font-size: 12px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer {
+      margin-top: 38px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        width: min(100% - 22px, 1120px);
+        padding-top: 18px;
+      }
+
+      .hero {
+        padding: 22px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
+  <main class="page">
+    <header class="hero">
+      <div class="eyebrow">Launcher</div>
       <h1>My Apps</h1>
-      <p class="subtitle">Opening Family page...</p>
+      <p class="subtitle">Choose which app group to open.</p>
     </header>
 
-    <div class="nav">
-      <a class="active" href="family.html">Family</a>
-      <a href="work.html">Work</a>
-      <a href="personal.html">Personal</a>
-    </div>
+    <section class="grid" aria-label="App groups">
+      <a class="app-card" href="family.html">
+        <div>
+          <h2 class="app-title">Family</h2>
+          <p class="app-desc">Food decisions, blood sugar notes, and learning tools.</p>
+        </div>
+        <div class="open-text">Open page</div>
+      </a>
 
-    <p class="subtitle">
-      If the page does not redirect automatically, open <a href="family.html">family.html</a>.
-    </p>
-  </div>
+      <a class="app-card" href="james.html">
+        <div>
+          <h2 class="app-title">James</h2>
+          <p class="app-desc">James schedule, daily tracking, and family reporting.</p>
+        </div>
+        <div class="open-text">Open page</div>
+      </a>
+
+      <a class="app-card" href="work.html">
+        <div>
+          <h2 class="app-title">Work</h2>
+          <p class="app-desc">Work tools, cReq, task tracking, requests, and operations.</p>
+        </div>
+        <div class="open-text">Open page</div>
+      </a>
+
+      <a class="app-card" href="personal.html">
+        <div>
+          <h2 class="app-title">Personal</h2>
+          <p class="app-desc">Personal todo, own projects, and recurring personal systems.</p>
+        </div>
+        <div class="open-text">Open page</div>
+      </a>
+    </section>
+
+    <footer class="footer">
+      GitHub Pages launcher for Google Apps Script web apps.
+    </footer>
+  </main>
 </body>
 </html>
