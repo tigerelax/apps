@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>James — Summer Schedule</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; padding: 16px; background: #fff; color: #111; }
+.phase-label {
+  font-size: 11px; font-weight: 600; color: #fff;
+  padding: 4px 10px; border-radius: 20px;
+  display: inline-block; margin-bottom: 8px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 72px repeat(7, 1fr);
+  border: 1px solid #e0ddd6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.hdr {
+  background: #f5f4f0; font-size: 11px; font-weight: 500;
+  color: #888; padding: 6px 3px; text-align: center;
+  border-bottom: 1px solid #e0ddd6;
+}
+.hdr.tl { text-align: left; padding-left: 7px; }
+.cell {
+  border-bottom: 1px solid #e0ddd6;
+  border-left: 1px solid #e0ddd6;
+  padding: 3px; background: #fff;
+  min-height: 36px;
+}
+.cell.tc {
+  font-size: 10px; color: #aaa;
+  padding: 5px 3px 3px 7px;
+  background: #f5f4f0; border-left: none; line-height: 1.5;
+}
+.no-b { border-bottom: none; }
+.pill {
+  display: block; border-radius: 5px;
+  font-size: 9px; line-height: 1.35;
+  padding: 2px 4px; margin-bottom: 2px; font-weight: 500;
+}
+.date-tag { font-size: 8px; opacity: 0.75; display: block; margin-top: 1px; font-weight: 400; }
+.p-purple { background: #EEEDFE; color: #3C3489; }
+.p-blue   { background: #E6F1FB; color: #0C447C; }
+.p-green  { background: #EAF3DE; color: #27500A; }
+.p-pink   { background: #FBEAF0; color: #72243E; }
+.p-gray   { background: #F1EFE8; color: #444441; }
+.p-sg     { background: #F7F7F5; color: #CECCC6; }
+.p-sd     { background: #F7F7F5; color: #CECCC6; }
+.p-amber  { background: #FDFCF9; color: #D9D0C0; }
+.p-xcamp  { background: #FAECE7; color: #993C1D; }
+.p-aw     { background: #FFF3CD; color: #7A4F00; }
+.p-cw     { background: #FCE4EC; color: #880E4F; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; font-size: 11px; }
+.leg { display: flex; align-items: center; gap: 4px; }
+.leg-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+</style></head>
+<body>
+
+<div class="legend">
+  <div class="leg"><div class="leg-dot" style="background:#EEEDFE;border:1px solid #AFA9EC"></div><span style="color:#3C3489">Algebra Live (Po-Shen Loh)</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#E6F1FB;border:1px solid #85B7EB"></div><span style="color:#0C447C">Think Academy</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#EAF3DE;border:1px solid #8BC34A"></div><span style="color:#27500A">Piano</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#FBEAF0;border:1px solid #F48FB1"></div><span style="color:#72243E">Chinese Class</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#F1EFE8;border:1px solid #C8C5B8"></div><span style="color:#444441">Drawing</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#F7F7F5;border:1px solid #DEDAD3"></div><span style="color:#BBBBBB">Tennis / S.Game / S.Discussion (optional)</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#FAECE7;border:1px solid #E07A5F"></div><span style="color:#993C1D">X-Camp</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#FFF3CD;border:1px solid #F0C040"></div><span style="color:#7A4F00">AW100 Analytical Writing</span></div>
+  <div class="leg"><div class="leg-dot" style="background:#FCE4EC;border:1px solid #F06292"></div><span style="color:#880E4F">CW100 Creative Writing</span></div>
+</div>
+
+<!-- PHASE 1: 6/10–6/14 -->
+<div class="phase-label" style="background:#6B7280">Jun 10–14　Think Academy begins</div>
+<div class="grid">
+  <div class="hdr tl">Time</div>
+  <div class="hdr">Mon</div><div class="hdr">Tue</div><div class="hdr">Wed</div>
+  <div class="hdr">Thu</div><div class="hdr">Fri</div><div class="hdr">Sat</div><div class="hdr">Sun</div>
+  <div class="cell tc">Morning</div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:30</span><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-pink">Chinese Class 8:20–9:20<span class="date-tag">Every Sat, year-round</span></span><span class="pill p-green">Piano 10:15–11:00<span class="date-tag">Every Sat, year-round</span></span></div>
+  <div class="cell"><span class="pill p-gray">Drawing 10:00–11:30<span class="date-tag">Every Sun, year-round</span></span></div>
+  <div class="cell tc">Afternoon</div>
+  <div class="cell"><span class="pill p-sg">S.Game 12–1 PM</span><span class="pill p-sg">S.Game 1–2 PM</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-amber">Tennis 4:30–5:30<span class="date-tag">Every Wed (optional)</span></span></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-blue">Think Academy 3–5 PM<span class="date-tag">Jun 10 – Dec 16</span></span></div>
+  <div class="cell tc no-b">Evening</div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span></div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span><span class="pill p-sg">S.Game 7–8 PM</span></div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"></div>
+</div>
+
+<!-- PHASE 2: 6/15–6/23 -->
+<div class="phase-label" style="background:#B45309">Jun 15–23　AW100 Analytical Writing (Algebra Live not yet started)</div>
+<div class="grid">
+  <div class="hdr tl">Time</div>
+  <div class="hdr">Mon</div><div class="hdr">Tue</div><div class="hdr">Wed</div>
+  <div class="hdr">Thu</div><div class="hdr">Fri</div><div class="hdr">Sat</div><div class="hdr">Sun</div>
+  <div class="cell tc">Morning</div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:30</span><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-pink">Chinese Class 8:20–9:20</span><span class="pill p-green">Piano 10:15–11:00</span></div>
+  <div class="cell"><span class="pill p-gray">Drawing 10:00–11:30</span></div>
+  <div class="cell tc">Afternoon</div>
+  <div class="cell"><span class="pill p-sg">S.Game 12–1 PM</span><span class="pill p-sg">S.Game 1–2 PM</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-amber">Tennis 4:30–5:30</span></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-blue">Think Academy 3–5 PM</span></div>
+  <div class="cell tc no-b">Evening</div>
+  <div class="cell no-b"><span class="pill p-aw">AW100 6–7 PM<span class="date-tag">Mon</span></span></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span></div>
+  <div class="cell no-b"><span class="pill p-aw">AW100 6–7 PM<span class="date-tag">Wed</span></span></div>
+  <div class="cell no-b"><span class="pill p-aw">AW100 6–7 PM<span class="date-tag">Thu</span></span><span class="pill p-sd">S.Discussion 6–6:45 PM</span><span class="pill p-sg">S.Game 7–8 PM</span></div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"></div>
+</div>
+
+<!-- PHASE 3: 6/24–7/1 -->
+<div class="phase-label" style="background:#7C3AED">Jun 24–Jul 1　AW100 + Algebra Live begins (Po-Shen Loh Jun 24)</div>
+<div class="grid">
+  <div class="hdr tl">Time</div>
+  <div class="hdr">Mon</div><div class="hdr">Tue</div><div class="hdr">Wed</div>
+  <div class="hdr">Thu</div><div class="hdr">Fri</div><div class="hdr">Sat</div><div class="hdr">Sun</div>
+  <div class="cell tc">Morning</div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:30</span><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-pink">Chinese Class 8:20–9:20</span><span class="pill p-green">Piano 10:15–11:00</span></div>
+  <div class="cell"><span class="pill p-gray">Drawing 10:00–11:30</span></div>
+  <div class="cell tc">Afternoon</div>
+  <div class="cell"><span class="pill p-sg">S.Game 12–1 PM</span><span class="pill p-sg">S.Game 1–2 PM</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-amber">Tennis 4:30–5:30</span></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-blue">Think Academy 3–5 PM</span></div>
+  <div class="cell tc no-b">Evening</div>
+  <div class="cell no-b"><span class="pill p-aw">AW100 6–7 PM<span class="date-tag">Mon</span></span></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span></div>
+  <div class="cell no-b"><span class="pill p-aw">AW100 6–7 PM<span class="date-tag">Wed</span></span><span class="pill p-purple">Algebra Live 7:15–8:45<span class="date-tag">★ Starts Jun 24</span></span></div>
+  <div class="cell no-b"><span class="pill p-aw">AW100 6–7 PM<span class="date-tag">Thu</span></span><span class="pill p-sd">S.Discussion 6–6:45 PM</span><span class="pill p-sg">S.Game 7–8 PM</span></div>
+  <div class="cell no-b"><span class="pill p-purple">Algebra Live 7:15–8:45<span class="date-tag">★ Starts Jun 24</span></span></div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"></div>
+</div>
+
+<!-- PHASE 4: 7/2–7/5 -->
+<div class="phase-label" style="background:#6B7280">Jul 2–5　Gap week</div>
+<div class="grid">
+  <div class="hdr tl">Time</div>
+  <div class="hdr">Mon</div><div class="hdr">Tue</div><div class="hdr">Wed</div>
+  <div class="hdr">Thu</div><div class="hdr">Fri</div><div class="hdr">Sat</div><div class="hdr">Sun</div>
+  <div class="cell tc">Morning</div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:30</span><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-pink">Chinese Class 8:20–9:20</span><span class="pill p-green">Piano 10:15–11:00</span></div>
+  <div class="cell"><span class="pill p-gray">Drawing 10:00–11:30</span></div>
+  <div class="cell tc">Afternoon</div>
+  <div class="cell"><span class="pill p-sg">S.Game 12–1 PM</span><span class="pill p-sg">S.Game 1–2 PM</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-amber">Tennis 4:30–5:30</span></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-blue">Think Academy 3–5 PM</span></div>
+  <div class="cell tc no-b">Evening</div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span></div>
+  <div class="cell no-b"><span class="pill p-purple">Algebra Live 7:15–8:45</span></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span><span class="pill p-sg">S.Game 7–8 PM</span></div>
+  <div class="cell no-b"><span class="pill p-purple">Algebra Live 7:15–8:45</span></div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"></div>
+</div>
+
+<!-- PHASE 5: 7/6–7/22 -->
+<div class="phase-label" style="background:#9D174D">Jul 6–22　CW100 Creative Writing + Algebra Live</div>
+<div class="grid">
+  <div class="hdr tl">Time</div>
+  <div class="hdr">Mon</div><div class="hdr">Tue</div><div class="hdr">Wed</div>
+  <div class="hdr">Thu</div><div class="hdr">Fri</div><div class="hdr">Sat</div><div class="hdr">Sun</div>
+  <div class="cell tc">Morning</div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:30</span><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-pink">Chinese Class 8:20–9:20</span><span class="pill p-green">Piano 10:15–11:00</span></div>
+  <div class="cell"><span class="pill p-gray">Drawing 10:00–11:30</span></div>
+  <div class="cell tc">Afternoon</div>
+  <div class="cell"><span class="pill p-sg">S.Game 12–1 PM</span><span class="pill p-sg">S.Game 1–2 PM</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-amber">Tennis 4:30–5:30</span></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-blue">Think Academy 3–5 PM</span></div>
+  <div class="cell tc no-b">Evening</div>
+  <div class="cell no-b"><span class="pill p-cw">CW100 6–7 PM<span class="date-tag">Jul 6–22 Mon</span></span></div>
+  <div class="cell no-b"><span class="pill p-cw">CW100 6–7 PM<span class="date-tag">Jul 6–22 Tue</span></span><span class="pill p-sd">S.Discussion 6–6:45 PM</span></div>
+  <div class="cell no-b"><span class="pill p-purple">Algebra Live 7:15–8:45<span class="date-tag">ends Aug 28</span></span></div>
+  <div class="cell no-b"><span class="pill p-cw">CW100 6–7 PM<span class="date-tag">Jul 6–22 Thu</span></span><span class="pill p-sd">S.Discussion 6–6:45 PM</span><span class="pill p-sg">S.Game 7–8 PM</span></div>
+  <div class="cell no-b"><span class="pill p-purple">Algebra Live 7:15–8:45<span class="date-tag">ends Aug 28</span></span></div>
+  <div class="cell no-b"><span class="pill p-xcamp">X-Camp 101PB 7–9 PM<span class="date-tag">Jul 10 – Sep 14</span></span></div>
+  <div class="cell no-b"></div>
+</div>
+
+<!-- PHASE 6: 7/23–8/28 -->
+<div class="phase-label" style="background:#1D4ED8">Jul 23–Aug 28　Algebra Live (ends Aug 28) · X-Camp (ends Sep 14)</div>
+<div class="grid">
+  <div class="hdr tl">Time</div>
+  <div class="hdr">Mon</div><div class="hdr">Tue</div><div class="hdr">Wed</div>
+  <div class="hdr">Thu</div><div class="hdr">Fri</div><div class="hdr">Sat</div><div class="hdr">Sun</div>
+  <div class="cell tc">Morning</div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:30</span><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-sd">S.Discussion 11–11:45</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-pink">Chinese Class 8:20–9:20</span><span class="pill p-green">Piano 10:15–11:00</span></div>
+  <div class="cell"><span class="pill p-gray">Drawing 10:00–11:30</span></div>
+  <div class="cell tc">Afternoon</div>
+  <div class="cell"><span class="pill p-sg">S.Game 12–1 PM</span><span class="pill p-sg">S.Game 1–2 PM</span></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-amber">Tennis 4:30–5:30</span></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"></div>
+  <div class="cell"><span class="pill p-blue">Think Academy 3–5 PM<span class="date-tag">through Dec 16</span></span></div>
+  <div class="cell tc no-b">Evening</div>
+  <div class="cell no-b"></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span></div>
+  <div class="cell no-b"><span class="pill p-purple">Algebra Live 7:15–8:45<span class="date-tag">ends Aug 28</span></span></div>
+  <div class="cell no-b"><span class="pill p-sd">S.Discussion 6–6:45 PM</span><span class="pill p-sg">S.Game 7–8 PM</span></div>
+  <div class="cell no-b"><span class="pill p-purple">Algebra Live 7:15–8:45<span class="date-tag">ends Aug 28</span></span></div>
+  <div class="cell no-b"><span class="pill p-xcamp">X-Camp 101PB 7–9 PM<span class="date-tag">ends Sep 14</span></span></div>
+  <div class="cell no-b"></div>
+</div>
+
+</body></html>
