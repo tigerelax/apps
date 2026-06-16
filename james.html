@@ -15,17 +15,11 @@
       --primary-soft: #eef2ff;
       --green-soft: #ecfdf3;
       --green: #067647;
-      --orange-soft: #fff4e6;
-      --orange: #b54708;
-      --purple-soft: #f4f3ff;
-      --purple: #5925dc;
       --shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
       --radius: 22px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -37,9 +31,7 @@
         linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #f2f4f7 100%);
     }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
     .page {
       width: min(1120px, calc(100% - 32px));
@@ -115,42 +107,7 @@
       letter-spacing: 0.08em;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 22px 0 34px;
-      padding: 8px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .nav a {
-      flex: 1 1 170px;
-      padding: 12px 16px;
-      border-radius: 13px;
-      color: #344054;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 750;
-      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
-    }
-
-    .nav a:hover {
-      transform: translateY(-1px);
-      background: #f2f4f7;
-    }
-
-    .nav a.active {
-      background: var(--text);
-      color: #fff;
-      box-shadow: 0 10px 20px rgba(23, 32, 51, 0.14);
-    }
-
-    .section {
-      margin-top: 30px;
-    }
+    .section { margin-top: 30px; }
 
     .section-header {
       display: flex;
@@ -264,15 +221,10 @@
       width: fit-content;
       padding: 7px 10px;
       border-radius: 999px;
-      background: var(--primary-soft);
-      color: #2f45b5;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .tag.family {
       background: var(--green-soft);
       color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
     }
 
     .open-text {
@@ -317,10 +269,6 @@
         align-items: flex-start;
         flex-direction: column;
       }
-
-      .nav a {
-        flex-basis: 100%;
-      }
     }
   </style>
 </head>
@@ -339,13 +287,6 @@
       </div>
     </header>
 
-    <nav class="nav" aria-label="App categories">
-      <a href="family.html">Family</a>
-      <a href="james.html" class="active">James</a>
-      <a href="work.html">Work</a>
-      <a href="personal.html">Personal</a>
-    </nav>
-
     <section class="section" aria-labelledby="james-section">
       <div class="section-header">
         <h2 id="james-section" class="section-title"><span class="icon">🏠</span>James / Family</h2>
@@ -358,7 +299,7 @@
             <p class="app-desc">James tracker and daily schedule view.</p>
           </div>
           <div class="card-bottom">
-            <span class="tag family">Family</span>
+            <span class="tag">Family</span>
             <span class="open-text">Open app</span>
           </div>
         </a>
@@ -369,7 +310,7 @@
             <p class="app-desc">Dad dashboard and daily reporting view.</p>
           </div>
           <div class="card-bottom">
-            <span class="tag family">Family</span>
+            <span class="tag">Family</span>
             <span class="open-text">Open app</span>
           </div>
         </a>
@@ -380,7 +321,7 @@
             <p class="app-desc">Open the separate schedule page.</p>
           </div>
           <div class="card-bottom">
-            <span class="tag family">Schedule</span>
+            <span class="tag">Schedule</span>
             <span class="open-text">Open page</span>
           </div>
         </a>
