@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gang / Own Needs Apps</title>
+  <title>Personal Apps</title>
   <style>
     :root {
       --bg: #f6f7fb;
@@ -137,7 +137,10 @@
       transition: transform 160ms ease, background 160ms ease, color 160ms ease;
     }
 
-    .nav a:hover { transform: translateY(-1px); background: #f2f4f7; }
+    .nav a:hover {
+      transform: translateY(-1px);
+      background: #f2f4f7;
+    }
 
     .nav a.active {
       background: var(--text);
@@ -174,7 +177,11 @@
       font-size: 17px;
     }
 
-    .section-note { color: var(--muted); font-size: 13px; font-weight: 650; }
+    .section-note {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
 
     .grid {
       display: grid;
@@ -220,7 +227,10 @@
       box-shadow: 0 18px 38px rgba(16, 24, 40, 0.10);
     }
 
-    .app-card:hover::after { background: var(--primary); color: #fff; }
+    .app-card:hover::after {
+      background: var(--primary);
+      color: #fff;
+    }
 
     .app-title {
       max-width: calc(100% - 44px);
@@ -231,7 +241,12 @@
       line-height: 1.18;
     }
 
-    .app-desc { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+    .app-desc {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.5;
+    }
 
     .card-bottom {
       display: flex;
@@ -282,14 +297,27 @@
     }
 
     @media (max-width: 760px) {
-      .page { width: min(100% - 22px, 1120px); padding-top: 18px; }
-      .hero { grid-template-columns: 1fr; padding: 22px; }
+      .page {
+        width: min(100% - 22px, 1120px);
+        padding-top: 18px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
       .hero-count { display: none; }
+
       .grid { grid-template-columns: 1fr; }
-      .section-header { align-items: flex-start; flex-direction: column; }
+
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .nav a { flex-basis: 100%; }
     }
-
   </style>
 </head>
 
@@ -298,7 +326,7 @@
     <header class="hero">
       <div>
         <div class="eyebrow">Personal launcher</div>
-        <h1>Gang / Own Needs Apps</h1>
+        <h1>Personal Apps</h1>
         <p class="subtitle">A cleaner home for your own needs: personal todo, quick references, special projects, and recurring personal systems.</p>
       </div>
       <div class="hero-count" aria-label="3 apps listed">
@@ -308,9 +336,9 @@
     </header>
 
     <nav class="nav" aria-label="App categories">
-      <a href="family.html" class="">Family</a>
-      <a href="jason.html" class="">Jason Work</a>
-      <a href="gang.html" class="active">Gang / Own Needs</a>
+      <a href="family.html">Family</a>
+      <a href="work.html">Work</a>
+      <a href="personal.html" class="active">Personal</a>
     </nav>
 
     <section class="section" aria-labelledby="personal">
@@ -331,6 +359,7 @@
         </a>
       </div>
     </section>
+
     <section class="section" aria-labelledby="own-projects">
       <div class="section-header">
         <h2 id="own-projects" class="section-title"><span class="icon">🧭</span>Own Projects</h2>
@@ -347,6 +376,7 @@
             <span class="open-text">Add link</span>
           </div>
         </a>
+
         <a class="app-card" href="#">
           <div>
             <h3 class="app-title">Quick Reference Launcher</h3>
