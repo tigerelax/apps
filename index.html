@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Apps</title>
-  <style>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Google Links</title><style>
     :root {
-      --bg: #f6f7fb;
-      --panel: #ffffff;
-      --text: #172033;
-      --muted: #667085;
-      --border: #e6e8ef;
-      --primary: #3b5bdb;
-      --primary-soft: #eef2ff;
-      --shadow: 0 16px 40px rgba(16, 24, 40, 0.08);
-      --radius: 22px;
+      --bg: #f6f7f3;
+      --card: #ffffff;
+      --text: #202124;
+      --muted: #6b706a;
+      --line: #e4e7de;
+      --accent: #2f6f5e;
+      --accent-soft: #e8f2ee;
+      --shadow: 0 10px 30px rgba(30, 45, 35, .08);
+      --radius: 18px;
     }
 
     * {
@@ -23,210 +17,270 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at top left, #edf5ef, var(--bg) 42%);
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(59, 91, 219, 0.14), transparent 34rem),
-        linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #f2f4f7 100%);
-    }
-
-    a {
-      color: inherit;
     }
 
     .page {
-      width: min(1120px, calc(100% - 32px));
+      max-width: 980px;
       margin: 0 auto;
-      padding: 36px 0 48px;
+      padding: 20px;
+      padding-bottom: 60px;
     }
 
     .hero {
-      padding: 30px;
-      border: 1px solid rgba(230, 232, 239, 0.8);
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.84);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 22px;
+      margin-bottom: 8px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .75);
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: #2f45b5;
       font-size: 13px;
+      color: var(--accent);
       font-weight: 700;
-      letter-spacing: 0.01em;
+      letter-spacing: .06em;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 0.96;
-      letter-spacing: -0.055em;
+      margin: 6px 0 6px;
+      font-size: 34px;
+      line-height: 1.1;
     }
 
-    .subtitle {
-      max-width: 720px;
-      margin: 16px 0 0;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.55;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 30px;
-    }
-
-    .app-card {
-      position: relative;
-      display: flex;
-      min-height: 168px;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      padding: 24px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--panel);
-      box-shadow: 0 8px 22px rgba(16, 24, 40, 0.04);
-      text-decoration: none;
-      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-    }
-
-    .app-card::after {
-      content: "↗";
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      display: grid;
-      width: 32px;
-      height: 32px;
-      place-items: center;
-      border-radius: 50%;
-      background: #f7f8fb;
-      color: #667085;
-      font-weight: 900;
-      transition: background 180ms ease, color 180ms ease;
-    }
-
-    .app-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(59, 91, 219, 0.34);
-      box-shadow: 0 18px 38px rgba(16, 24, 40, 0.10);
-    }
-
-    .app-card:hover::after {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .app-title {
-      max-width: calc(100% - 44px);
-      margin: 0 0 9px;
-      font-size: 26px;
-      font-weight: 850;
-      letter-spacing: -0.03em;
-      line-height: 1.18;
-    }
-
-    .app-desc {
+    p {
       margin: 0;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.5;
     }
 
-    .open-text {
-      margin-top: 28px;
-      color: #98a2b3;
+    .stamp {
+      flex: 0 0 auto;
       font-size: 12px;
-      font-weight: 750;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .footer {
-      margin-top: 38px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.62);
+      line-height: 1.35;
       color: var(--muted);
-      text-align: center;
-      font-size: 13px;
+      background: var(--accent-soft);
+      border: 1px solid #d9e9e2;
+      padding: 10px 12px;
+      border-radius: 14px;
+      text-align: right;
+      white-space: nowrap;
     }
 
-    @media (max-width: 760px) {
+    .section-tabs {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0 14px;
+      margin-bottom: 10px;
+      background: rgba(246, 247, 243, .92);
+      backdrop-filter: blur(12px);
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .tab {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .9);
+      color: var(--muted);
+      border-radius: 999px;
+      min-height: 40px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 750;
+      box-shadow: 0 2px 8px rgba(30, 45, 35, .05);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .tab.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .section-panel {
+      display: none;
+      margin-top: 8px;
+    }
+
+    .section-panel.active {
+      display: block;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      padding: 0 4px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .count {
+      color: var(--muted);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 5px 18px rgba(30, 45, 35, .06);
+    }
+
+    .card-title {
+      font-size: 17px;
+      font-weight: 750;
+      margin-bottom: 6px;
+      word-break: break-word;
+    }
+
+    .card-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 14px;
+      word-break: break-word;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fafbf8;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .empty,
+    .empty-state {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .empty-state {
+      padding: 28px;
+      background: #fff;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
       .page {
-        width: min(100% - 22px, 1120px);
-        padding-top: 18px;
+        padding: 12px;
+        padding-bottom: 50px;
       }
 
       .hero {
-        padding: 22px;
+        display: block;
+        padding: 18px;
       }
 
-      .grid {
+      h1 {
+        font-size: 28px;
+      }
+
+      .stamp {
+        margin-top: 14px;
+        text-align: left;
+        display: inline-block;
+      }
+
+      .section-tabs {
+        margin-left: -12px;
+        margin-right: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .tab {
+        min-height: 42px;
+        font-size: 15px;
+      }
+
+      .cards {
         grid-template-columns: 1fr;
       }
+
+      .card {
+        padding: 15px;
+      }
+
+      .btn {
+        flex: 1 1 120px;
+      }
     }
-  </style>
-</head>
+  </style></head><body><main class="page"><header class="hero"><div><div class="eyebrow">Google Links</div><h1>链接导航</h1><p>Tap a section. No long scrolling.</p></div><div class="stamp">Updated<br>6/24/2026, 8:49:23 AM</div></header><nav class="section-tabs"><button class="tab active" onclick="showSection('gang', this)">刚</button><button class="tab" onclick="showSection('james', this)">远</button><button class="tab" onclick="showSection('work', this)">工作</button><button class="tab" onclick="showSection('bg', this)">血糖</button><button class="tab" onclick="showSection('food', this)">食物</button></nav><section class="section-panel active" id="section-gang"><div class="section-head"><h2>刚</h2><div class="count">8 links</div></div><div class="cards"><article class="card"><div class="card-title">L-清单-刚</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxQClTNnZrcSD6DZUiVWG7q7aVCYlN63yw2dYQImQGlFukHqytV8peBFXMZO--N9UP9/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxQClTNnZrcSD6DZUiVWG7q7aVCYlN63yw2dYQImQGlFukHqytV8peBFXMZO--N9UP9/exec">Mobile</a></div></article><article class="card"><div class="card-title">personal 任务清单</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyU38yWFdtoIsNumrQ3IJnwg1cRrFHxvd_hG2kzJ9sjTfyrDnORHT8wehoQ2eEmpK31yQ/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyU38yWFdtoIsNumrQ3IJnwg1cRrFHxvd_hG2kzJ9sjTfyrDnORHT8wehoQ2eEmpK31yQ/exec?view-mobile">Mobile</a></div></article><article class="card"><div class="card-title">DUE</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyqoSBOBkXONM1c30heHhAkosCC8Sc-q8WJruGrKMMLKkVblxP3V_utZgZeg7kXUQAG/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyqoSBOBkXONM1c30heHhAkosCC8Sc-q8WJruGrKMMLKkVblxP3V_utZgZeg7kXUQAG/exec">Mobile</a></div></article><article class="card"><div class="card-title">个人看板 - 空白</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbx9ibOrLUFpFTEXi3ZnaKyOV7EvLqgQ_tDykDH98CE9U9JOyT-EctleJz3o10Pd70V0Xg/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbx9ibOrLUFpFTEXi3ZnaKyOV7EvLqgQ_tDykDH98CE9U9JOyT-EctleJz3o10Pd70V0Xg/exec">Mobile</a></div></article><article class="card"><div class="card-title">特殊项目 可以清空</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwI-J0OhrtnmEqMG7wqYa_e7tkqSv2X6ghjawyBfsWa75Vh5lhSWU3qL3tLGskWSIVl/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwI-J0OhrtnmEqMG7wqYa_e7tkqSv2X6ghjawyBfsWa75Vh5lhSWU3qL3tLGskWSIVl/exec">Mobile</a></div></article><article class="card"><div class="card-title">自我提高 思考内容</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxhO76OTefcU_ZvaZ0gqyqad1cyPizJZv8bsIhd7jwbuK6NT9OvoU0nXuPG8IThWXqX/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxhO76OTefcU_ZvaZ0gqyqad1cyPizJZv8bsIhd7jwbuK6NT9OvoU0nXuPG8IThWXqX/exec">Mobile</a></div></article><article class="card"><div class="card-title">刚-任务清单 空白</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxdwztbSjIojCUO-w_Mk_3pHl3e6n6_PyBdB1b629_dlPEpSBy0JLF6mljxr8iJobzP/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxdwztbSjIojCUO-w_Mk_3pHl3e6n6_PyBdB1b629_dlPEpSBy0JLF6mljxr8iJobzP/exec">Mobile</a></div></article><article class="card"><div class="card-title">远爸</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxpc5F75TLFMmbrDCnJPzpXCLp6ru5AVgXIh7Tf5rNOoQ0qUaZGX5nEsb4wY9mZcixhLg/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxpc5F75TLFMmbrDCnJPzpXCLp6ru5AVgXIh7Tf5rNOoQ0qUaZGX5nEsb4wY9mZcixhLg/exec">Mobile</a></div></article></div></section><section class="section-panel" id="section-james"><div class="section-head"><h2>远</h2><div class="count">8 links</div></div><div class="cards"><article class="card"><div class="card-title">L-清单-远</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwPsaT-fVb6oW7INDH0WNJRcwbdTmOZ1yvBA8hiZixoTeC6sR9XP9lGMushrAodwVbWYg/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwPsaT-fVb6oW7INDH0WNJRcwbdTmOZ1yvBA8hiZixoTeC6sR9XP9lGMushrAodwVbWYg/exec">Mobile</a></div></article><article class="card"><div class="card-title">James 任务 清单</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwsHqOjZzi3gM6dNdnFprJafv5SkBfEQ2uJReMOvHMDcrio6uS3RAhQtweFxPR2B3b_jQ/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwsHqOjZzi3gM6dNdnFprJafv5SkBfEQ2uJReMOvHMDcrio6uS3RAhQtweFxPR2B3b_jQ/exec?view-mobile">Mobile</a></div></article><article class="card"><div class="card-title">暑假 日历</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://tigerelax.github.io/apps/james_schedule.html">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://tigerelax.github.io/apps/james_schedule.html">Mobile</a></div></article><article class="card"><div class="card-title">追根究底学习记录器</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycby7Vh5rHB9-vv38Vi90qif66_zix0tIqxwFfkzMFB1GTd4lF9i7LcxyhazcTRi_9VLI/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycby7Vh5rHB9-vv38Vi90qif66_zix0tIqxwFfkzMFB1GTd4lF9i7LcxyhazcTRi_9VLI/exec">Mobile</a></div></article><article class="card"><div class="card-title">James summer 2026</div><div class="card-desc">Dashboard page</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbw_rpWGfwAFGQBxeG1G7ftlanAL__x6f3Ol-VGFUILojyHkdzeERrID2ZRd2Q2UQdPq0A/exec?page=dashboard">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbw_rpWGfwAFGQBxeG1G7ftlanAL__x6f3Ol-VGFUILojyHkdzeERrID2ZRd2Q2UQdPq0A/exec?page=dashboard">Mobile</a></div></article><article class="card"><div class="card-title">James daily log</div><div class="card-desc">Tracker page</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbw_rpWGfwAFGQBxeG1G7ftlanAL__x6f3Ol-VGFUILojyHkdzeERrID2ZRd2Q2UQdPq0A/exec?page=tracker">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbw_rpWGfwAFGQBxeG1G7ftlanAL__x6f3Ol-VGFUILojyHkdzeERrID2ZRd2Q2UQdPq0A/exec?page=tracker">Mobile</a></div></article><article class="card"><div class="card-title">james · 任务清单</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbysjiF06lAZpP_w0OsEmZbu1wpoWyXboUch-LP7TCK9xxQ21YB_146ii-dKvmalMjl8aw/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbysjiF06lAZpP_w0OsEmZbu1wpoWyXboUch-LP7TCK9xxQ21YB_146ii-dKvmalMjl8aw/exec">Mobile</a></div></article><article class="card"><div class="card-title">远 - 情绪控制</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbz4IP_jDRz2Kf4eenjeWGeLUJRi223P41NhSr4RIiVPeWmJ8ExnxJxewes0ZnwCqdGC/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbz4IP_jDRz2Kf4eenjeWGeLUJRi223P41NhSr4RIiVPeWmJ8ExnxJxewes0ZnwCqdGC/exec">Mobile</a></div></article></div></section><section class="section-panel" id="section-work"><div class="section-head"><h2>工作</h2><div class="count">6 links</div></div><div class="cards"><article class="card"><div class="card-title">work inbox</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxYurzI63puU2uE3O5MeMNwoY_ArZQoU_MneDsEqYWLaqB38gLzrs3Eop0hglXQi1tXXg/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbxYurzI63puU2uE3O5MeMNwoY_ArZQoU_MneDsEqYWLaqB38gLzrs3Eop0hglXQi1tXXg/exec">Mobile</a></div></article><article class="card"><div class="card-title">work 任务清单</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyU-9-7O7fuPD_EsN09kDTQ9reTkcRaEqlYvLoXHX8TthTRSoFzRUkJc5QiESz-FKP-ew/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyU-9-7O7fuPD_EsN09kDTQ9reTkcRaEqlYvLoXHX8TthTRSoFzRUkJc5QiESz-FKP-ew/exec?view=mobile">Mobile</a></div></article><article class="card"><div class="card-title">management</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycby5OZzDOO8K2MOY-wO_33THfnOU01ObULsWFHXowfFAtayn_cIVTQHI_5QjLyDbz_nu/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycby5OZzDOO8K2MOY-wO_33THfnOU01ObULsWFHXowfFAtayn_cIVTQHI_5QjLyDbz_nu/exec">Mobile</a></div></article><article class="card"><div class="card-title">staff</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyZEPs85RWvmT8iY6GZqApkQkRs5wNls_ertNxKEgj1m5H6prVGiEKKsmyDOoNMYvZnGw/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyZEPs85RWvmT8iY6GZqApkQkRs5wNls_ertNxKEgj1m5H6prVGiEKKsmyDOoNMYvZnGw/exec">Mobile</a></div></article><article class="card"><div class="card-title">depaul-cReq Simple Request Tracker</div><div class="card-desc">已经 populate</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyHiKhFnkIyBo280UhPiw8lrg6_hlIIhMykcHBdTau39z-zer94YEizhrPsh_k2I3h7/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyHiKhFnkIyBo280UhPiw8lrg6_hlIIhMykcHBdTau39z-zer94YEizhrPsh_k2I3h7/exec">Mobile</a></div></article><article class="card"><div class="card-title">L-清单-工作</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbypIyQRM1_hS7HgSSKHB5zZxuuifs8SXipX5JDATHbcDlzfkUdIz6bq7vEhlq-8aMMi/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbypIyQRM1_hS7HgSSKHB5zZxuuifs8SXipX5JDATHbcDlzfkUdIz6bq7vEhlq-8aMMi/exec">Mobile</a></div></article></div></section><section class="section-panel" id="section-bg"><div class="section-head"><h2>血糖</h2><div class="count">3 links</div></div><div class="cards"><article class="card"><div class="card-title">L-清单-血糖</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycby2iHIZH8dR6phlDXd6oYbMTb2uAeGCJZOAUCUIVpbylLyDAkY4vYz-jujFKVH-WUY_AQ/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycby2iHIZH8dR6phlDXd6oYbMTb2uAeGCJZOAUCUIVpbylLyDAkY4vYz-jujFKVH-WUY_AQ/exec">Mobile</a></div></article><article class="card"><div class="card-title">血糖控制</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwxzDV3Reb_nbGXL9qfjmqlOrBUomyfypQDOkc3zwj0HCF7W5uqKoZyridWYonPuH9xuQ/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwxzDV3Reb_nbGXL9qfjmqlOrBUomyfypQDOkc3zwj0HCF7W5uqKoZyridWYonPuH9xuQ/exec">Mobile</a></div></article><article class="card"><div class="card-title">专业系统</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwDtCxCbL0XW3_kR4218ziZ6YCY4JRsCDmmipD298UpPC00HI4yxOzGLXCgcTxQFS5J/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbwDtCxCbL0XW3_kR4218ziZ6YCY4JRsCDmmipD298UpPC00HI4yxOzGLXCgcTxQFS5J/exec">Mobile</a></div></article></div></section><section class="section-panel" id="section-food"><div class="section-head"><h2>食物</h2><div class="count">3 links</div></div><div class="cards"><article class="card"><div class="card-title">L-食物</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyTNfb-rGc0A7L9_9vCbsec2MjMV4YYM93LAcs-7KUX5mzrcb7DjOJwQPasuzcL7NIsAQ/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyTNfb-rGc0A7L9_9vCbsec2MjMV4YYM93LAcs-7KUX5mzrcb7DjOJwQPasuzcL7NIsAQ/exec">Mobile</a></div></article><article class="card"><div class="card-title">食物 记录</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyosM7xdrTTgD2R5vPjutAXkEs3kpXSbN-IHbCq7gu_o4dBPWFAg6JXciXNEp-IjOdh/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbyosM7xdrTTgD2R5vPjutAXkEs3kpXSbN-IHbCq7gu_o4dBPWFAg6JXciXNEp-IjOdh/exec">Mobile</a></div></article><article class="card"><div class="card-title">食物决策 Tracker</div><div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbzH7OEeK-VMEhkWkceE_owrpntnbFtLbym1tWbTE8bljJC-vTvFVW_3HcWQgDiFiiAj-Q/exec">Full Site</a><a class="btn primary" target="_blank" rel="noopener" href="https://script.google.com/macros/s/AKfycbzH7OEeK-VMEhkWkceE_owrpntnbFtLbym1tWbTE8bljJC-vTvFVW_3HcWQgDiFiiAj-Q/exec">Mobile</a></div></article></div></section></main><script>
+    function showSection(sectionId, btn) {
+      var panels = document.querySelectorAll('.section-panel');
+      for (var i = 0; i < panels.length; i++) {
+        panels[i].classList.remove('active');
+      }
 
-<body>
-  <main class="page">
-    <header class="hero">
-      <div class="eyebrow">Launcher</div>
-      <h1>My Apps</h1>
-      <p class="subtitle">Choose which app group to open.</p>
-    </header>
+      var tabs = document.querySelectorAll('.tab');
+      for (var j = 0; j < tabs.length; j++) {
+        tabs[j].classList.remove('active');
+      }
 
-    <section class="grid" aria-label="App groups">
-      <a class="app-card" href="family.html">
-        <div>
-          <h2 class="app-title">Family</h2>
-          <p class="app-desc">Food decisions, blood sugar notes, and learning tools.</p>
-        </div>
-        <div class="open-text">Open page</div>
-      </a>
+      var panel = document.getElementById('section-' + sectionId);
+      if (panel) {
+        panel.classList.add('active');
+      }
 
-      <a class="app-card" href="james.html">
-        <div>
-          <h2 class="app-title">James</h2>
-          <p class="app-desc">James schedule, daily tracking, and family reporting.</p>
-        </div>
-        <div class="open-text">Open page</div>
-      </a>
+      if (btn) {
+        btn.classList.add('active');
+      }
 
-      <a class="app-card" href="work.html">
-        <div>
-          <h2 class="app-title">Work</h2>
-          <p class="app-desc">Work tools, cReq, task tracking, requests, and operations.</p>
-        </div>
-        <div class="open-text">Open page</div>
-      </a>
-
-      <a class="app-card" href="personal.html">
-        <div>
-          <h2 class="app-title">Personal</h2>
-          <p class="app-desc">Personal todo, own projects, and recurring personal systems.</p>
-        </div>
-        <div class="open-text">Open page</div>
-      </a>
-    </section>
-
-    <footer class="footer">
-      GitHub Pages launcher for Google Apps Script web apps.
-    </footer>
-  </main>
-</body>
-</html>
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script></body></html>
